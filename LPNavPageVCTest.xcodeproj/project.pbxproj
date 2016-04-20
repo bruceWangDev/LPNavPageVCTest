@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EEDD67AA5B066CE27AF3A09 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B1EAE9449FAF48E95158E /* libPods.a */; };
 		B5EE832B1CC5B99600C6C2DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE832A1CC5B99600C6C2DD /* main.m */; };
 		B5EE832E1CC5B99600C6C2DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE832D1CC5B99600C6C2DD /* AppDelegate.m */; };
 		B5EE83311CC5B99600C6C2DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83301CC5B99600C6C2DD /* ViewController.m */; };
@@ -15,6 +16,9 @@
 		B5EE83391CC5B99600C6C2DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EE83371CC5B99600C6C2DD /* LaunchScreen.storyboard */; };
 		B5EE83441CC5B99600C6C2DD /* LPNavPageVCTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83431CC5B99600C6C2DD /* LPNavPageVCTestTests.m */; };
 		B5EE834F1CC5B99600C6C2DD /* LPNavPageVCTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE834E1CC5B99600C6C2DD /* LPNavPageVCTestUITests.m */; };
+		B5EE83631CC5BC7600C6C2DD /* LPBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83621CC5BC7600C6C2DD /* LPBaseVC.m */; };
+		B5EE83661CC5BCE900C6C2DD /* LPPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83651CC5BCE900C6C2DD /* LPPageVC.m */; };
+		B5EE83691CC628E300C6C2DD /* LPHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83681CC628E300C6C2DD /* LPHomeVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,22 +39,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82B096DDF6EAAE8A45F65AD2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		82FEB28E449AAABAE861CB12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B5EE83261CC5B99600C6C2DD /* LPNavPageVCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPNavPageVCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EE832A1CC5B99600C6C2DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B5EE832C1CC5B99600C6C2DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B5EE832D1CC5B99600C6C2DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B5EE832F1CC5B99600C6C2DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B5EE83301CC5B99600C6C2DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B5EE832C1CC5B99600C6C2DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		B5EE832D1CC5B99600C6C2DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		B5EE832F1CC5B99600C6C2DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		B5EE83301CC5B99600C6C2DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		B5EE83331CC5B99600C6C2DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B5EE83351CC5B99600C6C2DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5EE83351CC5B99600C6C2DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		B5EE83381CC5B99600C6C2DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B5EE833A1CC5B99600C6C2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5EE833A1CC5B99600C6C2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		B5EE833F1CC5B99600C6C2DD /* LPNavPageVCTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPNavPageVCTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EE83431CC5B99600C6C2DD /* LPNavPageVCTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPNavPageVCTestTests.m; sourceTree = "<group>"; };
 		B5EE83451CC5B99600C6C2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EE834A1CC5B99600C6C2DD /* LPNavPageVCTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPNavPageVCTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EE834E1CC5B99600C6C2DD /* LPNavPageVCTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPNavPageVCTestUITests.m; sourceTree = "<group>"; };
 		B5EE83501CC5B99600C6C2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5EE83611CC5BC7600C6C2DD /* LPBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseVC.h; sourceTree = "<group>"; };
+		B5EE83621CC5BC7600C6C2DD /* LPBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseVC.m; sourceTree = "<group>"; };
+		B5EE83641CC5BCE900C6C2DD /* LPPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPPageVC.h; sourceTree = "<group>"; };
+		B5EE83651CC5BCE900C6C2DD /* LPPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPPageVC.m; sourceTree = "<group>"; };
+		B5EE83671CC628E300C6C2DD /* LPHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPHomeVC.h; sourceTree = "<group>"; };
+		B5EE83681CC628E300C6C2DD /* LPHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPHomeVC.m; sourceTree = "<group>"; };
+		E18B1EAE9449FAF48E95158E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEDD67AA5B066CE27AF3A09 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55D8B591AA41F602DCD01230 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82B096DDF6EAAE8A45F65AD2 /* Pods.debug.xcconfig */,
+				82FEB28E449AAABAE861CB12 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A288EE673A64BC1B076AE1D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E18B1EAE9449FAF48E95158E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5EE831D1CC5B99600C6C2DD = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +116,8 @@
 				B5EE83421CC5B99600C6C2DD /* LPNavPageVCTestTests */,
 				B5EE834D1CC5B99600C6C2DD /* LPNavPageVCTestUITests */,
 				B5EE83271CC5B99600C6C2DD /* Products */,
+				55D8B591AA41F602DCD01230 /* Pods */,
+				A288EE673A64BC1B076AE1D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +134,9 @@
 		B5EE83281CC5B99600C6C2DD /* LPNavPageVCTest */ = {
 			isa = PBXGroup;
 			children = (
-				B5EE832C1CC5B99600C6C2DD /* AppDelegate.h */,
-				B5EE832D1CC5B99600C6C2DD /* AppDelegate.m */,
-				B5EE832F1CC5B99600C6C2DD /* ViewController.h */,
-				B5EE83301CC5B99600C6C2DD /* ViewController.m */,
-				B5EE83321CC5B99600C6C2DD /* Main.storyboard */,
-				B5EE83351CC5B99600C6C2DD /* Assets.xcassets */,
-				B5EE83371CC5B99600C6C2DD /* LaunchScreen.storyboard */,
-				B5EE833A1CC5B99600C6C2DD /* Info.plist */,
+				B5EE835E1CC5BBF400C6C2DD /* Sections */,
+				B5EE835D1CC5BBD400C6C2DD /* Resources */,
+				B5EE835C1CC5B9F800C6C2DD /* Others */,
 				B5EE83291CC5B99600C6C2DD /* Supporting Files */,
 			);
 			path = LPNavPageVCTest;
@@ -140,6 +168,57 @@
 			path = LPNavPageVCTestUITests;
 			sourceTree = "<group>";
 		};
+		B5EE835C1CC5B9F800C6C2DD /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				B5EE832C1CC5B99600C6C2DD /* AppDelegate.h */,
+				B5EE832D1CC5B99600C6C2DD /* AppDelegate.m */,
+				B5EE832F1CC5B99600C6C2DD /* ViewController.h */,
+				B5EE83301CC5B99600C6C2DD /* ViewController.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		B5EE835D1CC5BBD400C6C2DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5EE83321CC5B99600C6C2DD /* Main.storyboard */,
+				B5EE83351CC5B99600C6C2DD /* Assets.xcassets */,
+				B5EE83371CC5B99600C6C2DD /* LaunchScreen.storyboard */,
+				B5EE833A1CC5B99600C6C2DD /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5EE835E1CC5BBF400C6C2DD /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				B5EE83601CC5BC2900C6C2DD /* Menu */,
+				B5EE835F1CC5BC0200C6C2DD /* LPPageVC */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		B5EE835F1CC5BC0200C6C2DD /* LPPageVC */ = {
+			isa = PBXGroup;
+			children = (
+				B5EE83641CC5BCE900C6C2DD /* LPPageVC.h */,
+				B5EE83651CC5BCE900C6C2DD /* LPPageVC.m */,
+			);
+			path = LPPageVC;
+			sourceTree = "<group>";
+		};
+		B5EE83601CC5BC2900C6C2DD /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B5EE83611CC5BC7600C6C2DD /* LPBaseVC.h */,
+				B5EE83621CC5BC7600C6C2DD /* LPBaseVC.m */,
+				B5EE83671CC628E300C6C2DD /* LPHomeVC.h */,
+				B5EE83681CC628E300C6C2DD /* LPHomeVC.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5EE83531CC5B99600C6C2DD /* Build configuration list for PBXNativeTarget "LPNavPageVCTest" */;
 			buildPhases = (
+				6136EF7A8CC1539624D08B88 /* Check Pods Manifest.lock */,
 				B5EE83221CC5B99600C6C2DD /* Sources */,
 				B5EE83231CC5B99600C6C2DD /* Frameworks */,
 				B5EE83241CC5B99600C6C2DD /* Resources */,
+				F1E90B696503ABC884F3A88A /* Embed Pods Frameworks */,
+				06C2E6889FDB11926E89ECEC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,12 +347,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06C2E6889FDB11926E89ECEC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6136EF7A8CC1539624D08B88 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1E90B696503ABC884F3A88A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5EE83221CC5B99600C6C2DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5EE83661CC5BCE900C6C2DD /* LPPageVC.m in Sources */,
 				B5EE83311CC5B99600C6C2DD /* ViewController.m in Sources */,
+				B5EE83631CC5BC7600C6C2DD /* LPBaseVC.m in Sources */,
+				B5EE83691CC628E300C6C2DD /* LPHomeVC.m in Sources */,
 				B5EE832E1CC5B99600C6C2DD /* AppDelegate.m in Sources */,
 				B5EE832B1CC5B99600C6C2DD /* main.m in Sources */,
 			);
@@ -314,6 +447,7 @@
 				B5EE83331CC5B99600C6C2DD /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B5EE83371CC5B99600C6C2DD /* LaunchScreen.storyboard */ = {
@@ -322,6 +456,7 @@
 				B5EE83381CC5B99600C6C2DD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -411,9 +546,12 @@
 		};
 		B5EE83541CC5B99600C6C2DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82B096DDF6EAAE8A45F65AD2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = LPNavPageVCTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LP.LPNavPageVCTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,9 +560,12 @@
 		};
 		B5EE83551CC5B99600C6C2DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82FEB28E449AAABAE861CB12 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = LPNavPageVCTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LP.LPNavPageVCTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +637,7 @@
 				B5EE83551CC5B99600C6C2DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5EE83561CC5B99600C6C2DD /* Build configuration list for PBXNativeTarget "LPNavPageVCTestTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +646,7 @@
 				B5EE83581CC5B99600C6C2DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5EE83591CC5B99600C6C2DD /* Build configuration list for PBXNativeTarget "LPNavPageVCTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +655,7 @@
 				B5EE835B1CC5B99600C6C2DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

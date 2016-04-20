@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "LPHomeVC.h"
+#import "Masonry.h"
 
 @interface ViewController ()
 
@@ -14,14 +16,28 @@
 
 @implementation ViewController
 
+- (IBAction)goHomeVC:(id)sender {
+    
+    LPHomeVC * homeVC = [[LPHomeVC alloc] init];
+    
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    
+    [self presentViewController:nav animated:YES completion:^{
+      
+        NSLog(@"LPLPLP");
+    }];
+//    [self.navigationController pushViewController:homeVC animated:YES];
+
+}
+
 - (void)viewDidLoad {
+
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
+
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
