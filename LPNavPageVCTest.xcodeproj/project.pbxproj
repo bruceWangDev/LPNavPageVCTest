@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1EEDD67AA5B066CE27AF3A09 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B1EAE9449FAF48E95158E /* libPods.a */; };
+		B52A57211CC78A7E005CFFAC /* LPBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B52A57201CC78A7E005CFFAC /* LPBaseVC.m */; };
 		B5EE832B1CC5B99600C6C2DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE832A1CC5B99600C6C2DD /* main.m */; };
 		B5EE832E1CC5B99600C6C2DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE832D1CC5B99600C6C2DD /* AppDelegate.m */; };
 		B5EE83311CC5B99600C6C2DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83301CC5B99600C6C2DD /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		B5EE83391CC5B99600C6C2DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EE83371CC5B99600C6C2DD /* LaunchScreen.storyboard */; };
 		B5EE83441CC5B99600C6C2DD /* LPNavPageVCTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83431CC5B99600C6C2DD /* LPNavPageVCTestTests.m */; };
 		B5EE834F1CC5B99600C6C2DD /* LPNavPageVCTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE834E1CC5B99600C6C2DD /* LPNavPageVCTestUITests.m */; };
-		B5EE83631CC5BC7600C6C2DD /* LPBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83621CC5BC7600C6C2DD /* LPBaseVC.m */; };
 		B5EE83661CC5BCE900C6C2DD /* LPPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83651CC5BCE900C6C2DD /* LPPageVC.m */; };
 		B5EE83691CC628E300C6C2DD /* LPHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EE83681CC628E300C6C2DD /* LPHomeVC.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +41,8 @@
 /* Begin PBXFileReference section */
 		82B096DDF6EAAE8A45F65AD2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		82FEB28E449AAABAE861CB12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B52A571F1CC78A7E005CFFAC /* LPBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseVC.h; sourceTree = "<group>"; };
+		B52A57201CC78A7E005CFFAC /* LPBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseVC.m; sourceTree = "<group>"; };
 		B5EE83261CC5B99600C6C2DD /* LPNavPageVCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPNavPageVCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EE832A1CC5B99600C6C2DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5EE832C1CC5B99600C6C2DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		B5EE834A1CC5B99600C6C2DD /* LPNavPageVCTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPNavPageVCTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EE834E1CC5B99600C6C2DD /* LPNavPageVCTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPNavPageVCTestUITests.m; sourceTree = "<group>"; };
 		B5EE83501CC5B99600C6C2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5EE83611CC5BC7600C6C2DD /* LPBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseVC.h; sourceTree = "<group>"; };
-		B5EE83621CC5BC7600C6C2DD /* LPBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseVC.m; sourceTree = "<group>"; };
 		B5EE83641CC5BCE900C6C2DD /* LPPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPPageVC.h; sourceTree = "<group>"; };
 		B5EE83651CC5BCE900C6C2DD /* LPPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPPageVC.m; sourceTree = "<group>"; };
 		B5EE83671CC628E300C6C2DD /* LPHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPHomeVC.h; sourceTree = "<group>"; };
@@ -202,6 +202,8 @@
 		B5EE835F1CC5BC0200C6C2DD /* LPPageVC */ = {
 			isa = PBXGroup;
 			children = (
+				B52A571F1CC78A7E005CFFAC /* LPBaseVC.h */,
+				B52A57201CC78A7E005CFFAC /* LPBaseVC.m */,
 				B5EE83641CC5BCE900C6C2DD /* LPPageVC.h */,
 				B5EE83651CC5BCE900C6C2DD /* LPPageVC.m */,
 			);
@@ -211,8 +213,6 @@
 		B5EE83601CC5BC2900C6C2DD /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				B5EE83611CC5BC7600C6C2DD /* LPBaseVC.h */,
-				B5EE83621CC5BC7600C6C2DD /* LPBaseVC.m */,
 				B5EE83671CC628E300C6C2DD /* LPHomeVC.h */,
 				B5EE83681CC628E300C6C2DD /* LPHomeVC.m */,
 			);
@@ -401,8 +401,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5EE83661CC5BCE900C6C2DD /* LPPageVC.m in Sources */,
+				B52A57211CC78A7E005CFFAC /* LPBaseVC.m in Sources */,
 				B5EE83311CC5B99600C6C2DD /* ViewController.m in Sources */,
-				B5EE83631CC5BC7600C6C2DD /* LPBaseVC.m in Sources */,
 				B5EE83691CC628E300C6C2DD /* LPHomeVC.m in Sources */,
 				B5EE832E1CC5B99600C6C2DD /* AppDelegate.m in Sources */,
 				B5EE832B1CC5B99600C6C2DD /* main.m in Sources */,
