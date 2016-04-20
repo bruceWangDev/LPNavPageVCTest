@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/EizoiOS/LPNavPageVCTest.git", :tag => s.version }
 
- s.source_files  = "LPNavPageVCTest/Sections/*"
+ s.source_files  = "LPNavPageVCTest/Sections/LPPageVC,Menu"
  s.requires_arc = true
 
  end
