@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
 
  s.source_files  = "LPNavPageVCTest/Sections/LPPageVC/*"
  s.requires_arc = true
- s.dependency "Masonry", "~> 0.6.4”
+ s.dependency "Masonry", "~> 0.6.4"
  end
