@@ -1,4 +1,4 @@
-#LPPageVC 
+#LPNavPageVC 
 作者第一个三方库 Thanks 
 
 不忘初心，方得始终
@@ -15,10 +15,10 @@
 
 ## 代码 
 
-- 方法一：[CocoaPods](https://cocoapods.org/) 导入：`pod 'LPPageVC'`
+- 方法一：[CocoaPods](https://cocoapods.org/) 导入：`pod 'LPNavPageVC'`
 
-- 方法二：导入`LPPageVC`文件夹到你的项目中 (文件夹在 Demo 中可以找到)
-* 需要使用的vc请继承于LPPageVC (如果你不懂继承 .. Google);
+- 方法二：导入`LPNavPageVC`文件夹到你的项目中 (文件夹在 Demo 中可以找到)
+* 需要使用的vc请继承于LPPageVC (如果你不懂继承 .. Google)并且实现其相关方法，详情请阅读.h文件;
 
 ## 更新日志 2016.04.20 Update Logs (Tag: 1.0.0)
 
