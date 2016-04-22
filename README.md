@@ -1,4 +1,5 @@
-#LPNavPageVC - 仿网易新闻和今日头条的NavPages
+# LPNavPageVC - LP
+仿网易新闻和今日头条的NavPages
 
 作者第一个三方库 Thanks 
 
@@ -31,7 +32,7 @@
 
 * 发现问题请 Issues 我，谢谢:-)
 * Email: eizoios@126.com
-* Blog: http://www.eizoios.com
+* Blog: http://eizoios.com
 
 ## 授权 License
 
