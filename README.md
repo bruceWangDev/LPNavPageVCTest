@@ -1,7 +1,10 @@
-#LPNavPageVC 
+#LPNavPageVC - 仿网易新闻和今日头条的NavPages
+
 作者第一个三方库 Thanks 
 
 不忘初心，方得始终
+
+![LPNavPageVC](https://github.com/EizoiOS/LPNavPageVCTest/LPNavPageVCGIF.gif)
 
 ## 前言 
 
