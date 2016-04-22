@@ -48,7 +48,14 @@
     
     UIViewController * vc = [[UIViewController alloc] init];
     
-    vc.view.backgroundColor = [UIColor cyanColor];
+    if (index % 2) {
+
+        vc.view.backgroundColor = [UIColor cyanColor];
+
+    } else {
+        
+        vc.view.backgroundColor = [UIColor redColor];
+    }
     
     return vc;
 }
