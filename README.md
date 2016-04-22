@@ -4,7 +4,7 @@
 
 不忘初心，方得始终
 
-![LPNavPageVC](https://github.com/EizoiOS/LPNavPageVCTest/LPNavPageVCGIF.gif)
+![LPNavPageVC](https://github.com/EizoiOS/LPNavPageVCTest/blob/master/LPNavPageVCGIF.gif)
 
 ## 前言 
 
