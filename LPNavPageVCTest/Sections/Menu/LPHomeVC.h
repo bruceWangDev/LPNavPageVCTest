@@ -8,6 +8,6 @@
 
 #import "LPPageVC.h"
 
-@interface LPHomeVC : LPPageVC
+@interface LPHomeVC : LPPageVC // 第一步 --> 需要使用的 VC 要继承自 LPPageVC
 
 @end

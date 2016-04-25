@@ -10,17 +10,22 @@
 
 @class LPPageVC;
 
-#pragma LPPageVCEditMode - 最右侧的编辑按钮的mode
+#pragma LPPageVCEditMode - edit的状态 
 typedef NS_ENUM(NSInteger, LPPageVCEditMode) {
-    /**
-     *  正常
-     */
+    
     LPPageVCEditModeDefault = 0,
-    /**
-     *  编辑
-     */
+    
     LPPageVCEditModeEditing
 };
+
+#pragma LPPageVCSegmentStyle - segment的样式
+typedef NS_ENUM(NSInteger, LPPageVCSegmentStyle) {
+    
+    LPPageVCSegmentStyleDefault = 0,
+    
+    LPPageVCSegmentStyleLineHighlight
+};
+
 
 /**
  *  LPPageVCDataSource
@@ -37,6 +42,7 @@ typedef NS_ENUM(NSInteger, LPPageVCEditMode) {
 - (NSInteger)numberOfContentForPageVC:(LPPageVC *)pageVC;
 
 @end
+
 
 /**
  *  LPPageVCDelegate
@@ -68,6 +74,14 @@ typedef NS_ENUM(NSInteger, LPPageVCEditMode) {
 @property (nonatomic, weak) id <LPPageVCDataSource> dataSource;
 
 @property (nonatomic, weak) id <LPPageVCDelegate> delegate;
+
+@property (nonatomic, assign) LPPageVCSegmentStyle segmentStyle;
+
+@property (nonatomic, strong) UIColor * normalTextColor;
+
+@property (nonatomic, strong) UIColor * higlightTextColor;
+
+@property (nonatomic, strong) UIColor * lineBackground;
 
 #pragma mark - means
 

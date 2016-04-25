@@ -1,5 +1,4 @@
-# LPNavPageVC - LP
-仿网易新闻和今日头条的NavPages
+# LPNavPageVC - 仿网易新闻和今日头条的NavPages
 
 作者第一个三方库 Thanks 
 

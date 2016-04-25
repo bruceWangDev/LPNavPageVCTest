@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "LPHomeVC.h"
-#import "Masonry.h"
 
 @interface ViewController ()
 
@@ -26,6 +25,7 @@
       
         NSLog(@"LPLPLP");
     }];
+    
 //    [self.navigationController pushViewController:homeVC animated:YES];
 
 }

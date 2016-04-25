@@ -7,11 +7,10 @@
 //
 
 #import "LPHomeVC.h"
-#import "Masonry.h"
 
-@interface LPHomeVC () <LPPageVCDataSource,LPPageVCDelegate>
+@interface LPHomeVC () <LPPageVCDataSource,LPPageVCDelegate> // 第二步 --> 需要遵守 LPPageVCDataSource,LPPageVCDelegate
 
-@property (nonatomic, copy) NSArray * moderArr;
+@property (nonatomic, copy) NSArray * moderArr; // 数据源数组
 
 @end
 
@@ -21,19 +20,30 @@
 
     [super viewDidLoad];
     
+    self.navigationItem.title = @"News";
+
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.moderArr = @[@"首页",@"纵览",@"音频",@"视频",@"报纸",@"游戏",@"邮箱"];
 
+    // 第三步 --> 设置代理并且实现相关方法
     self.delegate = self;
     self.dataSource = self;
     
-    self.navigationItem.title = @"News";
+    // 设置样式 - 两种样式
+    self.segmentStyle = LPPageVCSegmentStyleDefault;
+//    self.segmentStyle = LPPageVCSegmentStyleLineHighlight; // 白色高亮在这个样式下不是很明显 自己修改
+
+    // 设置颜色
+    self.normalTextColor = [UIColor blackColor];    // 标签normal
+    self.higlightTextColor = [UIColor whiteColor];  // 标签higlight
+    self.lineBackground = [UIColor orangeColor];    // 标签背景颜色
     
+    // 切记刷新界面数据
     [self reloadData];
 }
 
-#pragma mark - HZPageVcDataSource & Delegate
+#pragma mark - HZPageVcDataSource & Delegate // 第四步
 - (NSInteger)numberOfContentForPageVC:(LPPageVC *)pageVC {
     
     return self.moderArr.count;
@@ -54,7 +64,7 @@
 
     } else {
         
-        vc.view.backgroundColor = [UIColor redColor];
+        vc.view.backgroundColor = [UIColor purpleColor];
     }
     
     return vc;

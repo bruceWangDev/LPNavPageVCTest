@@ -12,12 +12,13 @@
 /**
  *  Segment 的 高度
  */
-const CGFloat   LPPageVCSegmentHeight           = 40.f;
+const CGFloat   LPPageVCSegmentHeight           = 40.0f;
 
 /**
- *  Segment 的 指示器 的 高度
+ *  指示器 的 高度 PS:根据需求 背景 高度
  */
-const CGFloat   LPPageVCSegmentIndicatorHeight  = 3.f;
+const CGFloat   LPPageVCSegmentIndicatorHeight  = 32.0f;
+const CGFloat   LPPageVCSegmentIndicatorHeightLine  = 3.0f;
 
 /**
  *  可见的最大的Pages
@@ -26,9 +27,9 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
 
 @interface LPPageVC () <UIScrollViewDelegate> {
     
-    UIView * _segmentContainerView; // Container 容器
-    UIView * _contentContainerView; // Container 容器
-    UIView * _indicatorView;        // indicator 指示器
+    UIView * _segmentContainerView; // Container 容器 - 上面的SegmentCV
+    UIView * _contentContainerView; // Container 容器 - 下面的滚动视图CV
+    UIView * _indicatorView;        // indicator 指示器 - 标签下面的杠杠
     
     BOOL _doneLayout; // 完成 布局
     BOOL _editMode;   // edit 状态
@@ -38,10 +39,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) NSInteger lastIndex;
 
-@property (nonatomic, strong) NSMutableArray * segmentTitles;
-
-@property (nonatomic, strong) UIColor * normalTextColor;
-@property (nonatomic, strong) UIColor * higlightTextColor;
+@property (nonatomic, strong) NSMutableArray * segmentTitles; // 标签数组
 
 @property (nonatomic, strong) NSMutableDictionary * reusableVCDic; // reusable 可再用的
 
@@ -59,6 +57,33 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     }
     
     return self;
+}
+
+- (void)setSegmentStyle:(LPPageVCSegmentStyle)segmentStyle {
+    
+    _segmentStyle = segmentStyle;
+    
+    // 设置宽度和弧度
+    if (_segmentStyle == LPPageVCSegmentStyleDefault) {
+        
+        _indicatorView.layer.cornerRadius = 4.0f;
+        _indicatorView.layer.masksToBounds = YES;
+//        NSLog(@"LPPageVCSegmentStyleDefault");
+    }
+    
+    if (_segmentStyle == LPPageVCSegmentStyleLineHighlight) {
+        
+        _indicatorView.layer.cornerRadius = 0.0f;
+        _indicatorView.layer.masksToBounds = NO;
+//        NSLog(@"LPPageVCSegmentStyleLineHighlight");
+    }
+}
+
+- (void)setLineBackground:(UIColor *)lineBackground {
+    
+    _lineBackground = lineBackground;
+    
+    _indicatorView.backgroundColor = _lineBackground;
 }
 
 - (void)viewDidLoad {
@@ -79,8 +104,8 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     
     _editMode = LPPageVCEditModeDefault;
     
-    _higlightTextColor = [UIColor orangeColor];
-    _normalTextColor = [UIColor blackColor];
+//    _higlightTextColor = [UIColor orangeColor];
+//    _normalTextColor = [UIColor blackColor];
     
     _currentIndex = 0;
 
@@ -92,6 +117,9 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     _segmentScrollView.showsVerticalScrollIndicator = NO;   // 是否显示垂直滚动条
     
     _segmentScrollView.scrollsToTop = NO; // To Top
+    _segmentScrollView.bounces = NO;
+    
+    _segmentScrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     [self.view addSubview:_segmentScrollView];
     
@@ -124,6 +152,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         // 宽度等于_segmentScrollView的高度 - 也即是editButton是个正方形
     }];
     
+    
     // edit按钮左边的横线
     UIView * lineView = [[UIView alloc] init];
     lineView.backgroundColor = [UIColor lightGrayColor];
@@ -138,6 +167,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         // 但是这个横线的宽度仅仅为1 ..
     }];
     
+    
     // 创建edit按钮
     UIButton * editButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [editButton setBackgroundImage:[UIImage imageNamed:@"home_edit_column"] forState:UIControlStateNormal];
@@ -151,8 +181,18 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         make.center.mas_equalTo(editBgView);
     }];
     
+    // PS 翻转一个add顺序
     
+    // 杠杠内容容器视图
+    _indicatorView = [[UIView alloc] init];
+//    _indicatorView.backgroundColor = _lineBackground;
+//    _indicatorView.layer.cornerRadius = 0.0f;
+//    _indicatorView.layer.masksToBounds = NO;
     
+    [_segmentScrollView addSubview:_indicatorView];
+
+
+    // sgment 内容容器视图
     _segmentContainerView = [[UIView alloc] init];
     [_segmentScrollView addSubview:_segmentContainerView];
     
@@ -164,17 +204,15 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         make.height.mas_equalTo(_segmentScrollView);
     }];
     
-    _indicatorView = [[UIView alloc] init];
-    _indicatorView.backgroundColor = _higlightTextColor;
     
-    [_segmentScrollView addSubview:_indicatorView];
-    
-    // 内容视图 -- 就是当前VC展示Table的地方
+    // 内容视图
     _contentScrollView = [[UIScrollView alloc] init];
     _contentScrollView.showsHorizontalScrollIndicator = NO;
     _contentScrollView.scrollsToTop = NO;
     _contentScrollView.delegate = self;
     _contentScrollView.pagingEnabled = YES;
+    _contentScrollView.bounces = NO;
+
     
     [self.view addSubview:_contentScrollView];
     
@@ -185,6 +223,8 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide);
     }];
     
+   
+    // 内容容器视图
     _contentContainerView = [[UIView alloc] init];
     
     [_contentScrollView addSubview:_contentContainerView];
@@ -279,7 +319,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         label.userInteractionEnabled = YES;
         label.text = [NSString stringWithFormat:@"%@", title];
         label.textColor = _normalTextColor;
-        label.font = [UIFont systemFontOfSize:17.0f];
+        label.font = [UIFont systemFontOfSize:16.0f];
         label.textAlignment = NSTextAlignmentCenter;
         label.highlightedTextColor = _higlightTextColor;
         label.tag = 1000 + index;
@@ -287,7 +327,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSegmentItemAction:)];
         [label addGestureRecognizer:tapGesture];
         
-        [_segmentContainerView insertSubview:label belowSubview:_indicatorView];
+        [_segmentContainerView insertSubview:label aboveSubview:_indicatorView];
         
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
            
@@ -359,7 +399,15 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     
     CGRect frame = currentLabel.frame;
     
-    _indicatorView.frame = CGRectMake(CGRectGetMinX(frame), CGRectGetHeight(frame)-LPPageVCSegmentIndicatorHeight, CGRectGetWidth(frame), LPPageVCSegmentIndicatorHeight);
+    if (_segmentStyle == LPPageVCSegmentStyleDefault) {
+        
+        _indicatorView.frame = CGRectMake(CGRectGetMinX(frame) + 6, CGRectGetHeight(frame)-LPPageVCSegmentIndicatorHeight, CGRectGetWidth(frame) - 12, LPPageVCSegmentIndicatorHeight - 8);
+    }
+    
+    if (_segmentStyle == LPPageVCSegmentStyleLineHighlight) {
+        
+        _indicatorView.frame = CGRectMake(CGRectGetMinX(frame), CGRectGetHeight(frame)-LPPageVCSegmentIndicatorHeightLine, CGRectGetWidth(frame), LPPageVCSegmentIndicatorHeightLine);
+    }
     
     _contentScrollView.contentOffset = CGPointMake(0, 0);
     
@@ -407,14 +455,25 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         _currentIndex = currentIndex;
         
         [UIView animateWithDuration:0.3 animations:^{
+            
             UILabel *currentLabel = (UILabel *)[_segmentContainerView viewWithTag:1000 + _currentIndex];
             CGRect frame = currentLabel.frame;
-            _indicatorView.frame = CGRectMake(CGRectGetMinX(frame), CGRectGetHeight(frame)-LPPageVCSegmentIndicatorHeight, CGRectGetWidth(frame), LPPageVCSegmentIndicatorHeight);
+            
+            if (_segmentStyle == LPPageVCSegmentStyleDefault) {
+                
+                _indicatorView.frame = CGRectMake(CGRectGetMinX(frame) + 6, CGRectGetHeight(frame)-LPPageVCSegmentIndicatorHeight, CGRectGetWidth(frame) - 12, LPPageVCSegmentIndicatorHeight - 8);
+            }
+            
+            if (_segmentStyle == LPPageVCSegmentStyleLineHighlight) {
+                
+                _indicatorView.frame = CGRectMake(CGRectGetMinX(frame), CGRectGetHeight(frame)-LPPageVCSegmentIndicatorHeightLine, CGRectGetWidth(frame), LPPageVCSegmentIndicatorHeightLine);
+            }
         }];
         
         [self updateSegmentContentOffset];
         
         if ([_delegate respondsToSelector:@selector(pageVC:didChangeToIndex:fromIndex:)]) {
+            
             [_delegate pageVC:self didChangeToIndex:_currentIndex fromIndex:_lastIndex];
         }
     }
