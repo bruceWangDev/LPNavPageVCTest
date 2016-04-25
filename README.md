@@ -25,35 +25,36 @@
 - 方法二：导入`LPNavPageVC`文件夹到你的项目中 (文件夹在 Demo - S - L 中可以找到)
 
 * 首先需要使用的VC请继承于LPPageVC (如果你不懂继承 .. Google)
+
 * 其次我们需要遵守LPPageVCDataSource,LPPageVCDelegate两个协议并且实现相关方法
 
 > #pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
-[- (UIViewController *)pageVC:(LPPageVC *)pageVC viewControllerAtIndex:(NSInteger)index;]
+- (UIViewController *)pageVC:(LPPageVC *)pageVC viewControllerAtIndex:(NSInteger)index
 
-#pragma LPPageVCDataSource - 设置点击pageVCIndex的title
-- (NSString *)pageVC:(LPPageVC *)pageVC titleAtIndex:(NSInteger)index;
+> #pragma LPPageVCDataSource - 设置点击pageVCIndex的title
+- (NSString *)pageVC:(LPPageVC *)pageVC titleAtIndex:(NSInteger)index
 
-#pragma LPPageVCDataSource - 设置栏目的个数
-- (NSInteger)numberOfContentForPageVC:(LPPageVC *)pageVC;
+> #pragma LPPageVCDataSource - 设置栏目的个数
+- (NSInteger)numberOfContentForPageVC:(LPPageVC *)pageVC
 
-#pragma LPPageVCDelegate - 将要改变到index
-- (void)pageVC:(LPPageVC *)pageVC willChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex;
+> #pragma LPPageVCDelegate - 将要改变到index
+- (void)pageVC:(LPPageVC *)pageVC willChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
 
-#pragma LPPageVCDelegate - 已经改变到index
-- (void)pageVC:(LPPageVC *)pageVC didChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex;
+> #pragma LPPageVCDelegate - 已经改变到index
+- (void)pageVC:(LPPageVC *)pageVC didChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
 
-// 刷新数据
-- (void)reloadData;
+> #pragma LPPageVC - 刷新数据
+- (void)reloadData
 
-// 刷新一个具体的栏目
+> #pragma LPPageVC - 刷新一个具体的栏目
 - (void)reloadDataAtIndex:(NSUInteger)index;
 
-// 根据index获取对应的vc
+> #pragma LPPageVC - 根据index获取对应的vc
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
 
-## 更新日志 2016.04.20 Update Logs (Tag: 1.0.0)
-
-* 初始化提交。
+## 更新日志
+ 2016.04.25 Update Logs (Tag: 1.1.0)
+ 2016.04.20 Update Logs (Tag: 1.0.0)
 
 ## 联系 Support
 
