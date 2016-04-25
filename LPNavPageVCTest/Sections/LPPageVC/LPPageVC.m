@@ -9,6 +9,9 @@
 #import "LPPageVC.h"
 #import "Masonry.h"
 
+#define SCREEN_SIZE    [UIScreen mainScreen].bounds.size
+#define SCREEN_WIDTH  ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 /**
  *  Segment 的 高度
  */
@@ -104,9 +107,6 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     
     _editMode = LPPageVCEditModeDefault;
     
-//    _higlightTextColor = [UIColor orangeColor];
-//    _normalTextColor = [UIColor blackColor];
-    
     _currentIndex = 0;
 
     // 接下来是创建UI .. 首先是创建 segment 的滚动视图
@@ -126,6 +126,9 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     [_segmentScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(self.view);
+//        make.left.mas_equalTo(0);
+//        make.right.mas_equalTo(-40);
+        
         // 左和当前视图约束
         make.top.mas_equalTo(self.mas_topLayoutGuide);  // mas_topLayoutGuide 头部视图区域
         // 上和Top Nav约束
@@ -201,7 +204,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         // edges 其实就是top,left,bottom,right的一个简化
         make.edges.mas_equalTo(_segmentScrollView);
         // 高度 == _segmentScrollView == LPPageVCSegmentHeight
-        make.height.mas_equalTo(_segmentScrollView);
+        make.height.mas_equalTo(_segmentScrollView.mas_height);
     }];
     
     
@@ -340,7 +343,15 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
                 
                 make.left.mas_equalTo(_segmentContainerView.mas_left);
             }
-            make.width.mas_equalTo(60);
+            
+            if (SCREEN_WIDTH > 375.0f) {
+                
+                make.width.mas_equalTo(62);
+
+            } else {
+                
+                make.width.mas_equalTo(66);
+            }
         }];
         
         lastSegmentView = label;

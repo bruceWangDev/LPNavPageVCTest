@@ -72,12 +72,10 @@
 
 - (void)pageVC:(LPPageVC *)pageVC didChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex {
     
-//    NSLog(@"LPPageVC - index %ld - fromIndex %ld",(long)toIndex,(long)fromIndex);
+    NSLog(@"LPPageVC - index %ld - fromIndex %ld",(long)toIndex,(long)fromIndex);
 }
 
 - (void)pageVC:(LPPageVC *)pageVC didClickEditMode:(LPPageVCEditMode)mode {
-    
-//    NSLog(@"mode - %ld",(long)mode);
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"+/-" message:@"添加或者删除栏目" preferredStyle:UIAlertControllerStyleAlert];
     
