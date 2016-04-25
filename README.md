@@ -53,8 +53,8 @@
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
 
 ## 更新日志
- 2016.04.25 Update Logs (Tag: 1.1.0)
- 2016.04.20 Update Logs (Tag: 1.0.0)
+* 2016.04.25 Update Logs (Tag: 1.1.0)
+* 2016.04.20 Update Logs (Tag: 1.0.0)
 
 ## 联系 Support
 
