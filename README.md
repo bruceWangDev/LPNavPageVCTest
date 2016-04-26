@@ -26,6 +26,7 @@
 
 * 其次我们需要遵守LPPageVCDataSource,LPPageVCDelegate两个协议并且实现相关方法
 
+`
 #pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
 - (UIViewController *)pageVC:(LPPageVC *)pageVC viewControllerAtIndex:(NSInteger)index
 
@@ -49,6 +50,7 @@
 
 #pragma LPPageVC - 根据index获取对应的vc
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
+`
 
 #PS 
 `
@@ -58,7 +60,7 @@
     
     // 设置样式 - 两种样式
     self.segmentStyle = LPPageVCSegmentStyleDefault;
-//    self.segmentStyle = LPPageVCSegmentStyleLineHighlight; // 白色高亮在这个样式下不是很明显 自己修改
+    self.segmentStyle = LPPageVCSegmentStyleLineHighlight; // 白色高亮在这个样式下不是很明显 自己修改
 
     // 设置颜色
     self.normalTextColor = [UIColor blackColor];    // 标签normal
