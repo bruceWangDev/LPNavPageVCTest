@@ -27,34 +27,35 @@
 * 其次我们需要遵守LPPageVCDataSource,LPPageVCDelegate两个协议并且实现相关方法
 
 `
-#pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
-- (UIViewController *)pageVC:(LPPageVC *)pageVC viewControllerAtIndex:(NSInteger)index
+    // pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
+    - (UIViewController *)pageVC:(LPPageVC *)pageVC viewControllerAtIndex:(NSInteger)index
 
-#pragma LPPageVCDataSource - 设置点击pageVCIndex的title
-- (NSString *)pageVC:(LPPageVC *)pageVC titleAtIndex:(NSInteger)index
+    // pragma LPPageVCDataSource - 设置点击pageVCIndex的title   
+    - (NSString *)pageVC:(LPPageVC *)pageVC titleAtIndex:(NSInteger)index
 
-#pragma LPPageVCDataSource - 设置栏目的个数
-- (NSInteger)numberOfContentForPageVC:(LPPageVC *)pageVC
+    // pragma LPPageVCDataSource - 设置栏目的个数
+    - (NSInteger)numberOfContentForPageVC:(LPPageVC *)pageVC
 
-#pragma LPPageVCDelegate - 将要改变到index
-- (void)pageVC:(LPPageVC *)pageVC willChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
+    // pragma LPPageVCDelegate - 将要改变到index
+    - (void)pageVC:(LPPageVC *)pageVC willChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
 
-#pragma LPPageVCDelegate - 已经改变到index
-- (void)pageVC:(LPPageVC *)pageVC didChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
+    // pragma LPPageVCDelegate - 已经改变到index
+    - (void)pageVC:(LPPageVC *)pageVC didChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
 
-#pragma LPPageVC - 刷新数据
-- (void)reloadData
+    // pragma LPPageVC - 刷新数据
+    - (void)reloadData
 
-#pragma LPPageVC - 刷新一个具体的栏目
-- (void)reloadDataAtIndex:(NSUInteger)index;
+    // pragma LPPageVC - 刷新一个具体的栏目
+    - (void)reloadDataAtIndex:(NSUInteger)index;
 
-#pragma LPPageVC - 根据index获取对应的vc
-- (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
+    // pragma LPPageVC - 根据index获取对应的vc
+    - (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
 `
 
 #PS 
+
 `
-// 第三步 --> 设置代理并且实现相关方法
+    // 第三步 --> 设置代理并且实现相关方法
     self.delegate = self;
     self.dataSource = self;
     
