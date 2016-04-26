@@ -26,8 +26,7 @@
 
 * 其次我们需要遵守LPPageVCDataSource,LPPageVCDelegate两个协议并且实现相关方法
 
-`
-    // pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
+`   // pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
     - (UIViewController *)pageVC:(LPPageVC *)pageVC viewControllerAtIndex:(NSInteger)index
 
     // pragma LPPageVCDataSource - 设置点击pageVCIndex的title   
@@ -54,8 +53,7 @@
 
 #PS 
 
-`
-    // 第三步 --> 设置代理并且实现相关方法
+`   // 第三步 --> 设置代理并且实现相关方法
     self.delegate = self;
     self.dataSource = self;
     
