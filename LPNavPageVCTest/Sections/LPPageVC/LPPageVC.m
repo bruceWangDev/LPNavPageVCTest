@@ -12,13 +12,14 @@
 #define SCREEN_SIZE    [UIScreen mainScreen].bounds.size
 #define SCREEN_WIDTH  ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
 /**
- *  Segment 的 高度
+ *  segment的高度
  */
 const CGFloat   LPPageVCSegmentHeight           = 40.0f;
 
 /**
- *  指示器 的 高度 PS:根据需求 背景 高度
+ *  标签背景的高度 PS:两个样式
  */
 const CGFloat   LPPageVCSegmentIndicatorHeight  = 32.0f;
 const CGFloat   LPPageVCSegmentIndicatorHeightLine  = 3.0f;
@@ -45,6 +46,8 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
 @property (nonatomic, strong) NSMutableArray * segmentTitles; // 标签数组
 
 @property (nonatomic, strong) NSMutableDictionary * reusableVCDic; // reusable 可再用的
+
+@property (nonatomic, assign) CGSize size; // 用来适配多字数
 
 @end
 
@@ -100,10 +103,6 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
 - (void)defaultSetup {
  
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    /**
-     简单点说就是automaticallyAdjustsScrollViewInsets根据按所在界面的status bar，navigationbar，与tabbar的高度，自动调整scrollview的 inset,设置为no，不让viewController调整，我们自己修改布局即可~
-     */
     
     _editMode = LPPageVCEditModeDefault;
     
@@ -188,13 +187,9 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     
     // 杠杠内容容器视图
     _indicatorView = [[UIView alloc] init];
-//    _indicatorView.backgroundColor = _lineBackground;
-//    _indicatorView.layer.cornerRadius = 0.0f;
-//    _indicatorView.layer.masksToBounds = NO;
-    
     [_segmentScrollView addSubview:_indicatorView];
 
-
+    
     // sgment 内容容器视图
     _segmentContainerView = [[UIView alloc] init];
     [_segmentScrollView addSubview:_segmentContainerView];
@@ -327,6 +322,12 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         label.highlightedTextColor = _higlightTextColor;
         label.tag = 1000 + index;
         
+        // 改进适配字数
+        CGSize size = [label.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16.0f]}];
+        self.size = size;
+        
+//        NSLog(@"标签的宽度是 - %f",size.width);
+        
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSegmentItemAction:)];
         [label addGestureRecognizer:tapGesture];
         
@@ -335,6 +336,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
            
             make.top.bottom.mas_equalTo(_segmentContainerView);
+            
             if (lastSegmentView) {
                 
                 make.left.mas_equalTo(lastSegmentView.mas_right);
@@ -344,14 +346,22 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
                 make.left.mas_equalTo(_segmentContainerView.mas_left);
             }
             
-            if (SCREEN_WIDTH > 375.0f) {
-                
-                make.width.mas_equalTo(62);
+            CGSize sizeTest = self.size;
+            
+            sizeTest.width = sizeTest.width + 24;
+            
+            make.width.mas_equalTo(sizeTest);
 
-            } else {
-                
-                make.width.mas_equalTo(66);
-            }
+            
+//            if (SCREEN_WIDTH > 375.0f) {
+//                
+//                make.width.mas_equalTo(62);
+//                
+//            } else {
+//                
+//                make.width.mas_equalTo(66);
+//            }
+        
         }];
         
         lastSegmentView = label;
@@ -372,6 +382,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
             
                 make.left.mas_equalTo(_contentContainerView.mas_left);
             }
+            
             make.width.mas_equalTo(CGRectGetWidth([[UIScreen mainScreen] bounds]));
         }];
         
@@ -413,6 +424,7 @@ const NSInteger LPPageVCMaxVisiblePages         = 6;
     if (_segmentStyle == LPPageVCSegmentStyleDefault) {
         
         _indicatorView.frame = CGRectMake(CGRectGetMinX(frame) + 6, CGRectGetHeight(frame)-LPPageVCSegmentIndicatorHeight, CGRectGetWidth(frame) - 12, LPPageVCSegmentIndicatorHeight - 8);
+        
     }
     
     if (_segmentStyle == LPPageVCSegmentStyleLineHighlight) {

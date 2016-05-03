@@ -20,12 +20,7 @@
 
     [super viewDidLoad];
     
-    /**
-     *  low .. 此方法作用为隐藏导航栏下方的Line
-     */
     self.contentLineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    
-    //    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(1000, 4)]; // 一句话搞定
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,7 +43,6 @@
     if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
         
         return (UIImageView *)view;
-        
     }
     
     for (UIView *subview in view.subviews) {
@@ -59,7 +53,6 @@
             
             return imageView;
         }
-        
     }
     
     return nil;

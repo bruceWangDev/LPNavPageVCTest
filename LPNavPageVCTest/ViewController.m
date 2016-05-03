@@ -25,9 +25,6 @@
       
         NSLog(@"LPLPLP");
     }];
-    
-//    [self.navigationController pushViewController:homeVC animated:YES];
-
 }
 
 - (void)viewDidLoad {

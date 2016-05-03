@@ -24,7 +24,7 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.moderArr = @[@"首页",@"纵览",@"音频",@"视频",@"报纸",@"游戏",@"邮箱"];
+    self.moderArr = @[@"首页阿",@"音频视频阿",@"纵览",@"德玛西亚皇子",@"报纸书本",@"游戏",@"邮箱"];
 
     // 第三步 --> 设置代理并且实现相关方法
     self.delegate = self;
