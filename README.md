@@ -66,28 +66,36 @@ pragma LPPageVC - 根据index获取对应的vc
 #PS 第三步
 
 设置代理并且实现相关方法
-```  
+  ```  
   self.delegate = self;
+  ```
+  ```
   self.dataSource = self;
-```
+  ```
 
 设置样式 - 两种样式 
-```
+   ```
    self.segmentStyle = LPPageVCSegmentStyleDefault;
+   ```
+   ```
    self.segmentStyle = LPPageVCSegmentStyleLineHighlight; // 白色高亮在这个样式下不是很明显 自己修改
-```
+   ```
 
 设置颜色 - 三个方面的颜色
-```
+   ```
    self.normalTextColor = [UIColor blackColor];    // 标签normal
+   ```
+   ```
    self.higlightTextColor = [UIColor whiteColor];  // 标签higlight
+   ```
+   ```
    self.lineBackground = [UIColor orangeColor];    // 标签背景颜色
-```
+   ```
 
 最后切记刷新界面数据
-```
+   ```
    [self reloadData];
-```
+   ```
     
 
 ## 更新日志
