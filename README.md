@@ -30,64 +30,64 @@ LPPageVCSegmentStyleLineHighlight
 
 * 其次我们需要遵守LPPageVCDataSource,LPPageVCDelegate两个协议并且实现相关方法
 
-    pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
+pragma LPPageVCDataSource - 设置点击pageVCIndex的vc
     ```
     - (UIViewController *)pageVC:(LPPageVC *)pageVC viewControllerAtIndex:(NSInteger)index
     ```
-    pragma LPPageVCDataSource - 设置点击pageVCIndex的title
+pragma LPPageVCDataSource - 设置点击pageVCIndex的title
     ```   
     - (NSString *)pageVC:(LPPageVC *)pageVC titleAtIndex:(NSInteger)index
     ```
-    pragma LPPageVCDataSource - 设置栏目的个数
+pragma LPPageVCDataSource - 设置栏目的个数
     ```
     - (NSInteger)numberOfContentForPageVC:(LPPageVC *)pageVC
     ```
-    pragma LPPageVCDelegate - 将要改变到index
+pragma LPPageVCDelegate - 将要改变到index
     ```
     - (void)pageVC:(LPPageVC *)pageVC willChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
     ```
-    pragma LPPageVCDelegate - 已经改变到index
+pragma LPPageVCDelegate - 已经改变到index
     ```
     - (void)pageVC:(LPPageVC *)pageVC didChangeToIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
     ```
-    pragma LPPageVC - 刷新数据
+pragma LPPageVC - 刷新数据
     ```
     - (void)reloadData
     ```
-    pragma LPPageVC - 刷新一个具体的栏目
+pragma LPPageVC - 刷新一个具体的栏目
     ```
     - (void)reloadDataAtIndex:(NSUInteger)index;
     ```
-    pragma LPPageVC - 根据index获取对应的vc
+pragma LPPageVC - 根据index获取对应的vc
     ```
     - (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
     ```
 
-#PS 
+#PS 第三步
 
-    第三步 --> 设置代理并且实现相关方法
-    ```
-    self.delegate = self;
-    self.dataSource = self;
-    ```
+设置代理并且实现相关方法
+```  
+  self.delegate = self;
+  self.dataSource = self;
+```
 
-    设置样式 - 两种样式
-    ```
-    self.segmentStyle = LPPageVCSegmentStyleDefault;
-    self.segmentStyle = LPPageVCSegmentStyleLineHighlight; // 白色高亮在这个样式下不是很明显 自己修改
-    ```
+设置样式 - 两种样式 
+```
+   self.segmentStyle = LPPageVCSegmentStyleDefault;
+   self.segmentStyle = LPPageVCSegmentStyleLineHighlight; // 白色高亮在这个样式下不是很明显 自己修改
+```
 
-    设置颜色
-    ```
-    self.normalTextColor = [UIColor blackColor];    // 标签normal
-    self.higlightTextColor = [UIColor whiteColor];  // 标签higlight
-    self.lineBackground = [UIColor orangeColor];    // 标签背景颜色
-    ```
+设置颜色 - 三个方面的颜色
+```
+   self.normalTextColor = [UIColor blackColor];    // 标签normal
+   self.higlightTextColor = [UIColor whiteColor];  // 标签higlight
+   self.lineBackground = [UIColor orangeColor];    // 标签背景颜色
+```
 
-    切记刷新界面数据
-    ```
-    [self reloadData];
-    ```
+最后切记刷新界面数据
+```
+   [self reloadData];
+```
     
 
 ## 更新日志
