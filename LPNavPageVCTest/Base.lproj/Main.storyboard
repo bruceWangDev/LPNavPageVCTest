@@ -19,6 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-np-Yfv">
                                 <rect key="frame" x="172" y="319" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="goHomeVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0iC-Kz-4xn"/>
