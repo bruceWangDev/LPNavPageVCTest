@@ -104,11 +104,9 @@ pragma LPPageVC - 根据index获取对应的vc
 ## 联系 Support
 
 * 发现问题请 Issues 我，谢谢:-)
-* Email: eizoios@126.com
-* Blog: http://eizoios.com
+* Email: brucewangdev@126.com
+* Blog: https://brucewangdev.github.io/
 
 ## 授权 License
 
 本项目采用 [MIT license](http://opensource.org/licenses/MIT) 开源，你可以利用采用该协议的代码做任何事情，只需要继续继承 MIT 协议即可。
-
-PS:在此鸣谢我的美工 Ms吴.. 以及在CocoaChina提出建议的hanhaipeng . Thanks
