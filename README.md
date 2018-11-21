@@ -4,6 +4,13 @@
 
 因为作者很喜欢这类资讯应用浏览的方式，再加上最近的项目需要使用，于是 LPNavPageVC 就新鲜出炉了。
 
+[![Build Status](https://travis-ci.org/bruceWangDev/LPNavPageVCTest.svg?branch=master)](https://travis-ci.org/bruceWangDev/LPNavPageVCTest)
+[![CocoaPods](https://img.shields.io/cocoapods/v/LPNavPageVC.svg)](http://cocoadocs.org/docsets/LPNavPageVC)
+[![CocoaPods](https://img.shields.io/cocoapods/l/LPNavPageVC.svg)](https://github.com/bruceWangDev/LPNavPageVCTest/blob/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/p/LPNavPageVC.svg)](http://cocoadocs.org/docsets/LPNavPageVC)
+![CocoaPods](https://img.shields.io/cocoapods/dt/LPNavPageVC.svg)
+[![GitHub stars](https://img.shields.io/github/stars/bruceWangDev/LPNavPageVCTest.svg?style=social&label=Star)](https://github.com/bruceWangDev/LPButton)
+
 ## LPNavPageVC 有两种样式 
 
 LPPageVCSegmentStyleDefault
